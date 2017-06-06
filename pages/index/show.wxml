@@ -1,0 +1,17 @@
+<import src="/template/common/header.wxml" />
+<import src="/template/common/footer.wxml" />
+<view class="container">
+  <template is="header-common"/>
+  <view class="body">
+    <view class="c-img">
+      <image mode="aspectFill" src="{{goods.images}}"></image>
+    </view>
+    <view class="c-title">{{goods.title}}</view>
+    <view class="c-content">{{goods.describe}}</view>
+    <view class="buy">
+      <view class="buy-num">¥{{goods.price}}</view>
+      <navigator open-type="navigate" url="/pages/order/order?id={{goods.id}}" class="buy-btn">立即购买</navigator>
+    </view>
+  </view>
+  <template is="footer-common"/>
+</view>

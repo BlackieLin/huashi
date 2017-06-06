@@ -1,0 +1,100 @@
+@import "/style/common.wxss";
+/*widget-avatar*/
+.widget-avatar{
+    margin-bottom: 10px;
+}
+.avatar-group{
+    background:#f60;
+    text-align: center; 
+    color: #fff;
+    position: relative;
+    padding: 10px 0px;
+}
+.avatar-group .avatar-box{
+    position: relative;
+}
+.avatar-group .avatar{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 5px solid #e84342;
+}
+.avatar-group .avatar-name{
+    line-height: 24px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.avatar-group .avatar-des{
+    line-height: 24px;
+    font-size: 14px;
+}
+.avatar-group .minin-icon{
+    height: 20px;
+    width: 20px;
+    position: absolute;
+}
+.avatar-group .minin-icon-avatar{
+    right: 10px;
+    top: 75px;
+}
+.avatar-group .minin-icon-sex{
+    right: 38%;
+    bottom: 8px;
+    height: 25px;
+    width: 25px;
+}
+
+/*widgets*/
+.widgets .widget-title{
+  font-size: 16px;
+  line-height: 32px;
+  color: #f60; 
+  border-bottom: 1px solid #EBEBEB;
+  padding: 5px 10px 2px;
+  font-weight: bold;
+}
+.widgets .black{
+  color: #333;
+}
+.widgets .widget{
+  border-bottom: 1px solid #EBEBEB;
+  display:flex;
+  flex-direction: row;
+  padding: 10px 10px 5px;
+}
+.widgets .widget-left{
+  flex: 2;
+  padding-left: 10px;
+}
+.widget-left image{
+  height: 80px;
+  width: 80px;
+  border-radius: 5px;
+}
+.widgets .widget-right{
+  flex: 8;
+  padding-left: 10px;
+}
+.widgets .widget-right .title{
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: bold;
+  overflow:hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.widgets .widget-right .price{
+  color: #f60;
+}
+.widgets .widget-right .pay{
+  font-size: 14px;
+  background: #f60;
+  color: #fff;
+  padding: 0px 5px;
+  display: inline-block;
+  margin-top: 2px;
+}
+.widgets .widget-right .pay-over{
+  background: #999;
+}

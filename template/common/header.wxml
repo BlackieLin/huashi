@@ -1,0 +1,3 @@
+<template name="header-common">
+    <view class="top-common"></view>
+</template>

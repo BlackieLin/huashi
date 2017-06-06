@@ -1,0 +1,50 @@
+<import src="/template/common/header.wxml" />
+<import src="/template/common/footer.wxml" />
+<view class="container">
+  <template is="header-common"/>
+  <view class="body">
+    <!-- search box -->
+    <view class="widget-seller">
+      <view class="widget">
+        <view class="image-title widget-left">
+            <image mode="aspectFill" src="{{logo}}"></image>
+          </view>
+          <view class="widget-text  widget-center">
+            <view class="title">{{company}}</view>
+            <view class="desc">{{address}}</view>
+            <view class="btn-group">
+              <button type="primary" class="bg-green">已认证</button> <button type="primary">可预订</button>
+            </view>
+          </view>
+          <view class="widget-text widget-right">
+            <view class="tel" data-tel="{{item.tel}}" bindtap="callPhone"><image mode="widthFix" src="/images/39__03_w.png"></image></view>
+          </view>
+      </view>
+    </view>
+    <!-- /search box -->
+    <!-- history box -->
+    <view class="widgets">
+      <!-- wiget -->
+      <block wx:for-items="{{goods_list}}" wx:for-item="item" wx:key="index" >
+      <view class="widget">
+          <view class="image-title widget-left">
+            <image mode="aspectFill" src="{{item.images}}"></image>
+          </view>
+          <view class="widget-text  widget-center">
+            <navigator open-type="navigate" url="/pages/index/show?id={{item.id}}" class="title">{{item.title}}</navigator>
+            <view class="desc">用户100%好评</view>
+            <view class="btn-group">
+              <navigator open-type="navigate" url="/pages/order/order?id={{item.id}}" class="pay">立即购买</navigator>
+            </view>
+          </view>
+          <view class="widget-text widget-right">
+            <view class="distance">¥{{item.price}}</view>
+          </view>
+      </view>
+      </block>
+      <!-- /wiget -->
+    </view>
+    <!-- /history box -->
+  </view>
+  <template is="footer-common"/>
+</view>

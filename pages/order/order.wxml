@@ -1,0 +1,61 @@
+<import src="/template/common/header.wxml" />
+<import src="/template/common/footer.wxml" />
+<view class="container">
+  <template is="header-common"/>
+  <view class="body">
+    <form bindsubmit="submitForm">
+    <input type="text" hidden="true" name="goods_id" value="{{goods.id}}" />
+    <input type="text" hidden="true" name="pay_money" value="{{goods.price}}" />
+      <view class="widget">
+            <view class="from-group botton-line">
+                <view class="from-title">姓名</view>
+                <view class="from-widget">
+                    <input type="text" name="name" class="form-input" required="required" placeholder="输入姓名" value="{{userInfo.nickName}}" />
+                </view>
+            </view>
+            <view class="from-group botton-line">
+                <view class="from-title">电话</view>
+                <view class="from-widget">
+                    <input type="text" name="tel" class="form-input" required="required" placeholder="输入电话" />
+                </view>
+            </view>
+            <view class="from-group">
+                <view class="from-title">地址</view>
+                <view class="from-widget">
+                    <input type="text" name="address" class="form-input" required="required" placeholder="输入地址" />
+                </view>
+            </view>
+            <view class="from-group">
+                <view class="from-title">备注</view>
+                <view class="from-widget">
+                    <input type="text" name="beizhu" class="form-input" required="required" placeholder="备注" />
+                </view>
+            </view>
+            <!-- wiget -->
+            <view class="widgets">
+              <view class="widget">
+                  <view class="image-title widget-left">
+                    <image mode="aspectFill" src="{{goods.images}}"></image>
+                  </view>
+                  <view class="widget-text  widget-center">
+                    <view class="title">{{goods.title}}</view>
+                    <view class="desc">用户100%好评</view>
+                  </view>
+              </view>
+            </view>
+            <!-- /wiget -->
+            <view class="from-group">
+                <view class="from-title">应付</view>
+                <view class="from-widget">
+                    <view class="form-input">¥{{goods.price}}</view>
+                </view>
+            </view>
+      </view>
+      <view class="buy">
+        <view class="buy-num">¥{{goods.price}}</view>
+        <button type="default" form-type="submit" class="buy-btn">马上支付</button>
+      </view>
+    </form>
+  </view>
+  <template is="footer-common"/>
+</view>

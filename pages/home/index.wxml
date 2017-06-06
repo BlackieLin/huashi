@@ -1,0 +1,56 @@
+<import src="/template/common/header.wxml" />
+<import src="/template/common/footer.wxml" />
+<view class="container">
+  <template is="header-common"/>
+  <view class="body">
+      <!-- widget -->
+      <view class="widget widget-avatar">
+            <view class="avatar-group">
+                <view class="avatar-box">
+                    <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+                </view>
+                <view class="avatar-name">{{userInfo.nickName}}</view>
+            </view>
+      </view>
+      <!-- /widget -->
+      <!-- widgets -->
+      <view class="widgets" wx:if="{{order.length>0}}">
+        <view class="widget-title black">未完成订单</view>
+        <!-- widget -->
+        <block wx:for-items="{{order}}" wx:for-item="item" wx:key="index" >
+        <view class="widget">
+          <view class="widget-left">
+            <image mode="aspectFill" src="{{item.images}}"></image>
+          </view>
+          <view class="widget-right">
+            <view class="title">{{item.title}}</view>
+            <view class="price">¥{{item.price}}</view>
+            <view class="pay">马上支付</view>
+          </view>
+        </view>
+        </block>
+        <!-- /widget -->
+      </view>
+      <!-- /widgets -->
+      <!-- widgets -->
+      <view class="widgets" wx:if="{{history_order.length>0}}">
+        <view class="widget-title">历史订单</view>
+        <!-- widget -->
+        <block wx:for-items="{{history_order}}" wx:for-item="item" wx:key="index" >
+        <view class="widget">
+          <view class="widget-left">
+            <image mode="aspectFill" src="{{item.images}}"></image>
+          </view>
+          <view class="widget-right">
+            <view class="title">{{item.title}}</view>
+            <view class="price">¥{{item.price}}</view>
+            <view class="pay pay-over">已完成</view>
+          </view>
+        </view>
+        </block>
+        <!-- /widget -->
+      </view>
+      <!-- /widgets -->
+  </view>
+  <template is="footer-common"/>
+</view>

@@ -1,0 +1,68 @@
+<import src="/template/common/header.wxml" />
+<import src="/template/common/footer.wxml" />
+<view class="container">
+  <template is="header-common"/>
+  <view class="body">
+    <!-- search box -->
+    <view class="widget-search">
+      <view class="widget" bindtap="showPois">
+        <view class="widget-img"><image mode="widthFix" src="/images/01__03.png"></image></view>
+        <view class="widget-text grey">{{pois_address}}</view>
+      </view>
+    </view>
+    <!-- /search box -->
+    <!-- history box -->
+    <view class="widgets" wx:if="{{history_shop.length>0}}">
+      <view class="widget-title">到过的店</view>
+      <swiper class="swiper" autoplay="true" interval="3000" duration="1000">
+          <block wx:for-items="{{history_shop}}" wx:for-item="item" wx:key="index" >
+              <swiper-item>
+              <navigator open-type="navigate" url="/pages/index/list?seller_id={{item.id}}&company={{item.company}}&logo={{item.logo}}&address={{item.address}}&tel={{item.tel}}" class="widget">
+                  <view class="image-title widget-left">
+                    <image mode="aspectFill" src="{{item.logo}}"></image>
+                  </view>
+                  <view class="widget-text  widget-center">
+                    <view class="title">{{item.company}}</view>
+                    <view class="desc">{{item.office_time}}</view>
+                    <view class="btn-group">
+                      <button type="primary" class="bg-green">已认证</button> <button type="primary">可预订</button>
+                    </view>
+                  </view>
+                  <view class="widget-text widget-right">
+                    <view class="distance">距10m</view>
+                    <view class="tel" data-tel="{{item.tel}}" bindtap="callPhone"><image mode="widthFix" src="/images/39__03.png"></image></view>
+                  </view>
+              </navigator>
+              </swiper-item>
+          </block>
+      </swiper>
+    </view>
+    <!-- /history box -->
+    <!-- history box -->
+    <view class="widgets border-top">
+      <view class="widget-title black">附近的店</view>
+      <!-- widget -->
+      <block wx:for-items="{{nearby_shop}}" wx:for-item="item" wx:key="index" >
+      <view class="widget">
+          <navigator open-type="navigate" url="/pages/index/list?seller_id={{item.id}}&company={{item.company}}&logo={{item.logo}}&address={{item.address}}&tel={{item.tel}}" class="image-title widget-left">
+            <image mode="aspectFill" src="{{item.logo}}"></image>
+          </navigator>
+          <navigator open-type="navigate" url="/pages/index/list?seller_id={{item.id}}&company={{item.company}}&logo={{item.logo}}&address={{item.address}}&tel={{item.tel}}" class="widget-text  widget-center">
+            <view class="title">{{item.company}}</view>
+            <view class="desc">{{item.office_time}}</view>
+            <view class="btn-group">
+              <button type="primary" class="bg-green">已认证</button> <button type="primary">可预订</button>
+            </view>
+          </navigator>
+          <view class="widget-text widget-right">
+            <view class="distance">距10m</view>
+            <view class="tel" data-tel="{{item.tel}}" bindtap="callPhone"><image mode="widthFix" src="/images/39__03.png"></image></view>
+          </view>
+      </view>
+      </block>
+      <!-- /widget -->
+    </view>
+    <!-- /history box -->
+  </view>
+  <template is="footer-common"/>
+</view>

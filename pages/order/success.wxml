@@ -1,0 +1,17 @@
+<import src="/template/common/header.wxml" />
+<import src="/template/common/footer.wxml" />
+<view class="container">
+  <template is="header-common"/>
+  <view class="body">
+      <view class="note-box">
+          <icon class="icon-success" type="success" size="90" />
+          <view class="view-h2">订单成功</view>
+          <view class="view-p">暂时不支持在线支付，请货到付款</view>
+      </view> 
+      <view class="from-group">
+          <navigator open-type="switchTab" url="/pages/home/index" class="bnt"> 查看订单 </navigator>
+          <navigator open-type="switchTab" url="/pages/index/index" class="bnt"> 继续购物 </navigator>
+      </view>
+  </view>
+  <template is="footer-common"/>
+</view>
